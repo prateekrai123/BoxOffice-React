@@ -1,17 +1,17 @@
+/* eslint-disable arrow-body-style */
 import React from 'react';
 import ShowCard from './ShowCard';
-import IMAGE_NOT_FOUND from '../../images/not-found.png';
+import NOT_FOUND_IMAGE from '../../images/not-found.png';
 
-// eslint-disable-next-line
 const ShowGrid = ({ data }) => {
   return (
     <div>
-      {data.map(show => (
+      {data.map(({ show }) => (
         <ShowCard
           key={show.id}
           id={show.id}
           name={show.name}
-          image={show.image ? show.image.medium : IMAGE_NOT_FOUND}
+          image={show.image ? show.image.medium : NOT_FOUND_IMAGE}
           summary={show.summary}
         />
       ))}
