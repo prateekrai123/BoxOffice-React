@@ -9,7 +9,13 @@ const Home = () => {
     setInput(ev.target.value);
   };
 
-  const onSeach = () => {};
+  const onSeach = () => {
+    fetch(`http://api.tvmaze.com/search/shows?q=${input}`)
+      .then(r => r.json())
+      .then(result => {
+        console.log(result);
+      });
+  };
 
   return (
     <MainPageLayout>
