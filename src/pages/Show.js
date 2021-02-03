@@ -42,14 +42,12 @@ const Show = () => {
     apiGet(`shows/${id}?embed[]=seasons&embed[]=cast`)
       .then(results => {
         if (isMounted) {
-          const data = { type: 'FETCH_SUCCESS', show: results };
-          dispatch({ data });
+          dispatch({ type: 'FETCH_SUCCESS', show: results });
         }
       })
       .catch(err => {
         if (isMounted) {
-          const data = { type: 'FETCH_FAILED', error: err.message };
-          dispatch({ data });
+          dispatch({ type: 'FETCH_FAILED', error: err.message });
         }
       });
 
@@ -73,7 +71,7 @@ const Show = () => {
       <div>
         <ShowMainData
           image={show.image}
-          name={show.image}
+          name={show.name}
           rating={show.rating}
           summary={show.summary}
           tags={show.genres}
