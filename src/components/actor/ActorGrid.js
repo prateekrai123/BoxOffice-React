@@ -1,9 +1,10 @@
+/* eslint-disable arrow-body-style */
 import React from 'react';
 import ActorCard from './ActorCard';
-import NOT_FOUND_IMAGE from '../../images/not-found.png';
+
+import IMAGE_NOT_FOUND from '../../images/not-found.png';
 import { FlexGrid } from '../styled';
 
-// eslint-disable-next-line
 const ActorGrid = ({ data }) => {
   return (
     <FlexGrid>
@@ -15,7 +16,7 @@ const ActorGrid = ({ data }) => {
           birthday={person.birthday}
           deathday={person.deathday}
           gender={person.gender}
-          image={person.image ? person.image.medium : NOT_FOUND_IMAGE}
+          image={person.image ? person.image.medium : IMAGE_NOT_FOUND}
         />
       ))}
     </FlexGrid>
