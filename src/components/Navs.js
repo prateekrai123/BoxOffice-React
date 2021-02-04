@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaction } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { NavList, LinkStyled } from './Navs.styled';
 
 const LINKS = [
@@ -9,7 +9,7 @@ const LINKS = [
 
 // eslint-disable-next-line
 const Navs = () => {
-  const location = useLoaction();
+  const location = useLocation();
   return (
     <div>
       <NavList>
@@ -17,7 +17,7 @@ const Navs = () => {
           <li key={item.to}>
             <LinkStyled
               to={item.to}
-              className={item.to === location.pathName ? 'active' : ''}
+              className={item.to === location.pathname ? 'active' : ''}
             >
               {item.text}
             </LinkStyled>
